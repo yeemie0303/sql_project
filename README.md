@@ -52,7 +52,6 @@ sql_project/
 
 - [ ] Develop Power BI dashboards using data from the `view/` directory
 - [ ] Implement user behavior clustering or trend forecasting
-- [ ] Enhance automation for ETL and data loading
 
 ## 📌 Getting Started
 
