@@ -1,49 +1,66 @@
-🧠 Customer & Product Analytics (SQL-Only Version)
+# 🧠 SQL Retail Analytics Project
 
-This project focuses on using **SQL (MySQL)** to analyze customer behavior and product performance from a transactional sales dataset. It lays the groundwork for a future Power BI dashboard by preparing clean, segmented, and insightful data summaries.
+This project is a SQL-based retail analytics exploration using sales, customer, and product data to generate insights into customer behavior, product performance, and temporal sales trends. It simulates a data warehouse environment and includes a set of reusable SQL scripts and output views that support business intelligence reporting.
 
----
+## 📁 Project Structure
 
-## 📦 Dataset Overview
+```
+sql_project/
+│
+├── data/                  # Raw input data in CSV format
+│   ├── customers.csv
+│   ├── fact_sales.csv
+│   └── products.csv
+│
+├── script/                # SQL scripts used for transformation and analysis
+│   ├── changes_over_time.sql
+│   ├── cummulative_analysis.sql
+│   ├── customer_report.sql
+│   ├── data_segmentation.sql
+│   ├── data_segmentation_2.sql
+│   ├── part_to_whole.sql
+│   ├── performance_analysis.sql
+│   └── product_report.sql
+│
+├── view/                  # Output CSVs generated from queries
+│   ├── report_customers.csv
+│   └── report_products.csv
+```
 
-This project uses a structured retail dataset consisting of:
+## ✅ Project Goals
 
-- `fact_sales`: Transaction-level sales data
-- `products`: Product attributes and classifications
-- `customers`: Demographic information
+- Load and query customer, sales, and product data.
+- Perform descriptive analytics through reusable SQL scripts.
+- Generate summary reports on:
+  - 📊 Product performance (revenue, volume, lifespan)
+  - 👥 Customer segmentation (VIPs, Regulars, New)
+  - 📈 Sales trends over time
 
-Each sale record links a customer to a product on a specific date with quantity and sales value.
+## 🔍 Example Insights
 
----
+- Which product categories bring in the highest revenue?
+- How do we classify customers by total spending and order history?
+- What is the lifetime value and behavior of our loyal customers?
 
-## 🛠 Tools Used
+## 🛠 Technologies
 
-- **MySQL** for querying and transformation
-- **DBMS**: MySQL 8+
-- **Git** for version control
-- *(Power BI to be added in future work)*
+- MySQL 8.x (with Docker)
+- SQL for transformations, aggregations, and window functions
+- Power BI (planned for visualization, not yet implemented)
 
----
+## 🚀 Next Steps
 
-## ✅ SQL Objectives
+- [ ] Develop Power BI dashboards using data from the `view/` directory
+- [ ] Implement user behavior clustering or trend forecasting
+- [ ] Enhance automation for ETL and data loading
 
-### 📍 Customer Analytics
-- Calculate total orders, sales, and quantity per customer
-- Derive customer age and lifespan (months between first and last order)
-- Segment customers into:
-  - `VIP` (high spenders with long tenure)
-  - `Regular` (long tenure, lower spend)
-  - `New` (short tenure)
+## 📌 Getting Started
 
-### 📍 Product Analytics
-- Aggregate product performance:
-  - Total orders, revenue, quantity sold, unique customers
-  - Lifespan in market (based on first and last sale)
-- Segment products into:
-  - `High-Performers` (revenue > 100K)
-  - `Mid-Range`
-  - `Low-Performers`
+To run the SQL scripts, ensure:
+1. MySQL server is running (you can use Docker).
+2. Tables are loaded from the CSVs inside `data/`.
+3. Each SQL file can be executed in MySQL Workbench or CLI.
 
----
+## 📄 License
 
-## 📂 Project Structure
+MIT License
